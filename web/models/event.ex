@@ -6,4 +6,10 @@ defmodule RestApi.Event do
 
     timestamps
   end
+
+  def changeset(model, params \\ :empty) do
+    model
+      |> cast(params, [:title, :description])
+      |> unique_constraint(:title)
+  end
 end

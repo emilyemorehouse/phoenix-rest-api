@@ -24,5 +24,7 @@ defmodule RestApi.Router do
 
     get "/events", EventController, :index
     get "/events/:id", EventController, :event
+    post "/events", EventController, :create
+    put "/events/:id", EventController, :update
   end
 end
